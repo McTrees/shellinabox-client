@@ -19,6 +19,12 @@ function createWindow(loading) {
     setTimeout(function() {
       win.show()
       win.focus()
+      if(config['maximize_on_startup']) {
+        win.maximize()
+      }
+      if(config['fullscreen_on_startup']) {
+        win.setFullScreen(true)
+      }
       setTimeout(function() {
         loading.hide()
       }, 1000); //Wait a bit, because the window won't pop in instantly
@@ -33,6 +39,11 @@ app.on('ready', () => {
   loading.once('ready-to-show', () => {
     loading.show()
   })
+
+app.on('login', function(event, webContents, request, authInfo, callback) { // When we need to log in, send the un/pw
+  event.preventDefault()
+  callback('token', config['auth_token'])
+})
 
   createWindow(loading)
 })

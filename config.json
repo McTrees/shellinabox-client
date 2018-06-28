@@ -1,3 +1,6 @@
 {
-  "remote_url": "https://shell.mctrees.net"
+  "remote_url": "https://shell.mctrees.net",
+  "auth_token": "placeholder",
+  "fullscreen_on_startup": false,
+  "maximize_on_startup": false
 }

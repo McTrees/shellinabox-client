@@ -28,7 +28,7 @@ function createWindow(loading) {
 
 
 app.on('ready', () => {
-  loading = new BrowserWindow({show: false, frame: false})
+  loading = new BrowserWindow({show: false, frame: false, width:350, height:500})
   loading.loadFile(__dirname + '/loading.html')
   loading.once('ready-to-show', () => {
     loading.show()
